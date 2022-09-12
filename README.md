@@ -44,6 +44,18 @@ Feel free to contribute any time :)
   device_class: battery
 ``` 
 
+If CPU temperature is showing 0°C then you need to edit the HA_Desktop configuration.yaml file in the same folder as HA_Desktop_Companion.exe.
+You can try and replace the line: 
+```
+wmic_path: Win32_PerfFormattedData_Counters_ThermalZoneInformation.Name='\\_TZ.CPUZ'
+``` 
+to 
+```
+wmic_path: Win32_PerfFormattedData_Counters_ThermalZoneInformation.Name='\\_TZ.THM0'
+```
+Then Quit HA Desktop and restart it.
+
+
 ## Screenshots
 
 ![image](https://user-images.githubusercontent.com/22167469/184820849-c2932b91-a4ee-4c0d-a220-58ab01444c29.png)
